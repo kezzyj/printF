@@ -1,11 +1,10 @@
 #include "main.h"
 
-
 int _printf(const char *format, ...)
 {
 	va_list arg;
 	int index = 0;
-	char *buffer[200] = {0};
+	char buffer[200] = {0};
 	int j = 0;
 	char * str;
 
@@ -26,24 +25,26 @@ int _printf(const char *format, ...)
 
 				case 's':
 					str = va_arg(arg, char *);
-					strcpy(buffer[j], str);
+					strcpy(&buffer[j], str);
 					j += strlen(str);
 					break;
 
 				case '%':
-					buffer[j] = (char)va_arg(arg, int);
+					putchar('%');
 					j++;
 					break;
 			}
+		}
 
 			else
 			{
-				buff[j] = format[index];
+				buffer[j] = format[index];
 				j++;
 			}
+
+			index++;
 		}
-		index++;
-	}
+	
         fwrite(buffer, j , 1, stdout);
 	va_end(arg);
 	return (j);
