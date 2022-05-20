@@ -8,6 +8,7 @@ int _printf(const char *format, ...)
 	char buffer[200] = {0};
 	int j = 0;
 	char * str;
+	char c;
 
 	va_start(arg, format);
 
@@ -31,7 +32,7 @@ int _printf(const char *format, ...)
 					break;
 
 				case '%':
-					buffer[j] = va_arg(arg, int);
+					buffer[j] = write(1, &buffer[j], 1);
 					j++;
 					break;
 			}
