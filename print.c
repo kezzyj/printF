@@ -1,6 +1,4 @@
 #include "main.h"
-#include <unistd.h>
-
 
 int _printf(const char *format, ...)
 {
@@ -32,7 +30,7 @@ int _printf(const char *format, ...)
 					break;
 
 				case '%':
-					buffer[j] = write(1, &buffer[j], 1);
+					putchar('%');
 					j++;
 					break;
 			}
