@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 
 int _printf(const char *format, ...)
@@ -8,7 +9,6 @@ int _printf(const char *format, ...)
 	char buffer[200] = {0};
 	int j = 0;
 	char * str;
-	char c;
 
 	va_start(arg, format);
 
