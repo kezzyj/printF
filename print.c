@@ -30,8 +30,7 @@ int _printf(const char *format, ...)
 					break;
 
 				case '%':
-					buffer[j] = (char)va_arg(arg, int);
-					j++;
+					_putchar('%');
 					break;
 			}
 		}
