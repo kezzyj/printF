@@ -30,7 +30,8 @@ int _printf(const char *format, ...)
 					break;
 
 				case '%':
-					_putchar('%');
+				        buff[j] = _putchar('%');
+				        j++;
 					break;
 			}
 		}
