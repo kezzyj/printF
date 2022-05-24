@@ -1,19 +1,19 @@
 #ifndef MAIN_H
 #define MAIN_H
-
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
+#include <stddef.h>
 #include <unistd.h>
-#include <string.h>
-#include <limits.h>
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int rev(int n);
-void my_putchar(int var);
-
-int _putchar(char c)                                                            {
-	return (write(1, &c, 1));
-}
+void print_num(int num);
+void _puts(char *str);
+int hex(int num);
+int _printf_S(char *s);
+int print_rev(char *s);
+int _rot13(char *s);
+int _ptr(unsigned long int dec);
+void base_convert(int num, int base);
 
 #endif
