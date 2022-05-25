@@ -8,18 +8,6 @@
 #include <stdlib.h>
 #include <limits.h>
 
-int _putchar(char c);
-int _printf(const char *format, ...);
-void print_num(int num);
-void _puts(char *str);
-int hex(int num);
-int _printf_S(char *s);
-int print_rev(char *s);
-int _rot13(char *s);
-int _ptr(unsigned long int dec);
-void base_convert(int num, int base);
-
-
 /* Flag Modifier Macros */
 
 #define PLUS 1
@@ -204,11 +192,7 @@ void free_buffer(buffer_t *output);
 
 unsigned int _memcpy(buffer_t *output, const char *src, unsigned int n);
 
-unsigned int convert_sbase(buffer_t *output, long int num, char *base,
+unsigned int convert_sbase(buffer_t *output, long int num, char *base, unsigned char flags, char wid, char prec);
+unsigned int convert_ubase(buffer_t *output, unsigned long int num, char *base, unsigned char flags, char wid, char prec);
 
-		unsigned char flags, char wid, char prec);
-
-unsigned int convert_ubase(buffer_t *output, unsigned long int num, char *base,
-
-		unsigned char flags, char wid, char prec);
 #endif
