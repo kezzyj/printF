@@ -6,6 +6,7 @@
 #include <stddef.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -191,9 +192,7 @@ char handle_width(va_list args, const char *modifier, char *index);
 
 char handle_precision(va_list args, const char *modifier, char *index);
 
-unsigned int (*handle_specifiers(const char *specifier))(va_list, buffer_t *,\
-
-		unsigned char, char, char, unsigned char);
+unsigned int (*handle_specifiers(const char *specifier))(va_list, buffer_t *, unsigned char, char, char, unsigned char);
 
 
 
