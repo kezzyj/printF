@@ -1,16 +1,6 @@
 #include "main.h"
 
 
-unsigned int convert_sbase(buffer_t *output, long int num, char *base,	unsigned char flags, char wid, char prec);
-
-unsigned int convert_ubase(buffer_t *output,
-
-		unsigned long int num, char *base,
-
-		unsigned char flags, char wid, char prec);
-
-
-
 /**
  *
  *  * convert_sbase - Converts a signed long to an inputted base and stores
@@ -35,24 +25,17 @@ unsigned int convert_ubase(buffer_t *output,
  *
  *            */
 
-unsigned int convert_sbase(buffer_t *output, long int num, char *base,
-
-		unsigned char flags, char wid, char prec)
-
+unsigned int convert_sbase(buffer_t *output, long int num, char *base, unsigned char flags, char wid, char prec)
 {
-
 	int size;
 
 	char digit, pad = '0';
 
 	unsigned int ret = 1;
 
-
-
 	for (size = 0; *(base + size);)
 
 		size++;
-
 
 
 	if (num >= size || num <= -size)
@@ -125,31 +108,19 @@ unsigned int convert_sbase(buffer_t *output, long int num, char *base,
  *
  *            */
 
-unsigned int convert_ubase(buffer_t *output, unsigned long int num, char *base,
-
-		unsigned char flags, char wid, char prec)
-
+unsigned int convert_ubase(buffer_t *output, unsigned long int num, char *base, unsigned char flags, char wid, char prec)
 {
 
 	unsigned int size, ret = 1;
 
 	char digit, pad = '0', *lead = "0x";
-
-
-
 	for (size = 0; *(base + size);)
 
 		size++;
 
-
-
 	if (num >= size)
 
-		ret += convert_ubase(output, num / size, base,
-
-				flags, wid - 1, prec - 1);
-
-
+		ret += convert_ubase(output, num / size, base, flags, wid - 1, prec - 1);
 
 	else
 
